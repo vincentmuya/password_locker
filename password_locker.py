@@ -2,15 +2,13 @@ class Password:
     '''
     class that generates new instances of Passwords
     '''
+    password_list =[] #Empty password_list
 
-def __init__(self,account_name,user_name,email):
-    '''
-    __init__method that helps us define properties for our object
+    def __init__(self,account_name,user_name,account_password):
+        '''
+        __init__method that helps us define properties for our object
+        '''
 
-    Args:
-        account_name: New password account_name.
-        user_name: New password user_name.
-        email:New password email
-
-
-    '''
+        self.account_name = account_name
+        self.user_name = user_name
+        self.account_password = account_password
