@@ -65,7 +65,10 @@ def main():
                 for password in display_passwords():
                     print(f"{password.account_name} {password.user_name} {password.email} {password.account_password}")
                     print("")
-
+            else:
+                print("")
+                print("You dont seem to have any accounts saved yet")
+                print("")
 
 
 
