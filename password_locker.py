@@ -1,3 +1,4 @@
+import pyperclip
 class Password:
 
     password_list =[]
