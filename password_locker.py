@@ -21,3 +21,14 @@ class Password:
             for password in cls.password_list:
                 if password.account_name == account_name:
                     return password
+
+    @classmethod
+    def password_exist(cls,user_name):
+        for password in cls.password_list:
+            if password.user_name == user_name:
+                return True
+        return False
+
+    @classmethod
+    def display_passwords(cls):
+        return cls.password_list
