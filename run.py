@@ -28,6 +28,38 @@ def main():
     print(f"Hi {user_name}! What would you like to do?")
     print("")
 
+    while True:
+        print("""Use these short codes:
+                ca - create new account,
+                da - display account,
+                fa - find account,
+                ex - exist password locker.""")
+        short_code = input().lower()
+        print("_" * 20)
+        if short_code == "ca":
+            print("New Account")
+            print("_" * 20)
+
+            print("Enter Account Name -")
+            a_name = input()
+
+            print("Enter User Name -")
+            u_name = input()
+
+            print("Enter Email -")
+            e_address = input()
+
+            print("Enter Password -")
+            a_password = input()
+
+            save_password(create_password(a_name, u_name, e_address, a_password))
+
+            print("")
+            print(f"""New account - {a_name} {u_name} """)
+            print("")
+
+
+
 
 if __name__=='__main__':
     main()
