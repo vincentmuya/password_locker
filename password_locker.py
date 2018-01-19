@@ -14,3 +14,9 @@ class Password:
 
     def delete_password(self):
         Password.password_list.remove(self)
+
+    @classmethod
+    def find_by_account_name(cls,account_name):
+            for password in cls.password_list:
+                if password.account_name == account_name:
+                    return password
