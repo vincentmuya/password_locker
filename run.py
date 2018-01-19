@@ -63,13 +63,26 @@ def main():
                 print("Here is a list of all your accounts")
                 print("")
                 for password in display_passwords():
-                    print(f"{password.account_name} {password.user_name} {password.email} {password.account_password}")
+                    print(
+                        f"{password.account_name} {password.user_name} {password.email} {password.account_password}")
                     print("")
             else:
                 print("")
                 print("You dont seem to have any accounts saved yet")
                 print("")
 
+        elif short_code == "fa":
+            print("Enter Account you want to search for")
+
+            search_account = input()
+            if checking_existing_password(search_account):
+                search_account = find_password(search_account)
+                print("_" * 20)
+                print(f"{search_password.account_name} {search_password.user_name}")
+                print("_" * 20)
+                print(f"email - {search_password.email} ")
+                print("account_password -{search_password.account_password}")
+                print("")
 
 
 if __name__=='__main__':
