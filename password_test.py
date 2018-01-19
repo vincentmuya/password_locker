@@ -26,5 +26,8 @@ class TestPassword(unittest.TestCase):
         test_password.save_password()
         self.assertEqual(len(Password.password_list),2)
 
+    def test_delete_password(self):
+        self.new_password.save_password()
+
 if __name__=='__main__':
     unittest.main()
