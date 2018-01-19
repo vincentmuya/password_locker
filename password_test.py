@@ -33,5 +33,12 @@ class TestPassword(unittest.TestCase):
         self.new_password.delete_password()
         self.assertEqual(len(Password.password_list),1)
 
+    def test_find_password_by_account_name(self):
+        self.new_password.save_password()
+        test_password = Password("Test","user","test12345")
+        test_password.save_password()
+        found_password = Password.find_by_account_name("Test")
+        self.assertEqual(found_password.account_password,test_password.account_password)
+
 if __name__=='__main__':
     unittest.main()
