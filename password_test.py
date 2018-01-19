@@ -62,7 +62,10 @@ class TestPassword(unittest.TestCase):
     def test_display_all_passwords(self):
         self.assertEqual(Password.display_passwords(),Password.password_list)
 
-    def 
+    def test_copy_user_name(self):
+        self.new_password.save_password()
+        Password.copy_user_name("user")
+        self.assertEqual(self.new_password.user_name,pyperclip.paste())
 
 if __name__=='__main__':
     unittest.main()
