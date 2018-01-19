@@ -74,15 +74,24 @@ def main():
         elif short_code == "fa":
             print("Enter Account you want to search for")
 
-            search_account = input()
-            if checking_existing_password(search_account):
-                search_account = find_password(search_account)
+            search_account_name = input()
+            if checking_existing_password(search_account_name):
+                search_password = find_password(search_account_name)
                 print("_" * 20)
                 print(f"{search_password.account_name} {search_password.user_name}")
                 print("_" * 20)
-                print(f"email - {search_password.email} ")
-                print("account_password -{search_password.account_password}")
+                print(f"Email Address - {search_password.email} ")
+                print("Account Password -{search_password.account_password}")
                 print("")
+
+            else:
+                print("That account does not exist")
+        elif short_code == "ex":
+            print("Bye!! Thank you for using Password locker")
+            break
+        else:
+            print("I really didnt get that. Please use short code below")
+            print("")
 
 
 if __name__=='__main__':
