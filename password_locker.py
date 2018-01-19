@@ -2,11 +2,12 @@ class Password:
 
     password_list =[]
 
-    def __init__(self,account_name,user_name,account_password):
+    def __init__(self,account_name,user_name,email,account_password):
 
 
         self.account_name = account_name
         self.user_name = user_name
+        self.email = email
         self.account_password = account_password
 
     def save_password(self):
