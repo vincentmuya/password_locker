@@ -18,9 +18,9 @@ class Password:
         Password.password_list.remove(self)
 
     @classmethod
-    def find_by_account_name(cls,account_name):
+    def find_by_account_name(cls,user_name):
             for password in cls.password_list:
-                if password.account_name == account_name:
+                if password.user_name == user_name:
                     return password
 
     @classmethod
@@ -33,3 +33,8 @@ class Password:
     @classmethod
     def display_passwords(cls):
         return cls.password_list
+
+    @classmethod
+    def copy_user_name(cls,user_name):
+        password_found = Password.find_by_account_name(user_name)
+        pyperclip.copy(password_found.account_password)

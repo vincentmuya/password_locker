@@ -49,7 +49,7 @@ class TestPassword(unittest.TestCase):
         self.new_password.save_password()
         test_password = Password("Test","user","vincentmuya13@gmail.com","test12345")
         test_password.save_password()
-        found_password = Password.find_by_account_name("Test")
+        found_password = Password.find_by_account_name("user")
         self.assertEqual(found_password.account_password,test_password.account_password)
 
     def test_password_exists(self):
@@ -64,8 +64,8 @@ class TestPassword(unittest.TestCase):
 
     def test_copy_user_name(self):
         self.new_password.save_password()
-        Password.copy_user_name("user")
-        self.assertEqual(self.new_password.user_name,pyperclip.paste())
+        Password.copy_user_name("Vincent Muya")
+        self.assertEqual(self.new_password.account_password,pyperclip.paste())
 
 if __name__=='__main__':
     unittest.main()
