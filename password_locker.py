@@ -11,3 +11,6 @@ class Password:
 
     def save_password(self):
         Password.password_list.append(self)
+
+    def delete_password(self):
+        Password.password_list.remove(self)
