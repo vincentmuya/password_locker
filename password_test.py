@@ -22,12 +22,16 @@ class TestPassword(unittest.TestCase):
 
     def test_save_multiple_password(self):
         self.new_password.save_password()
-        test_password = Password("test","user","test12345")
+        test_password = Password("Test","user","test12345")
         test_password.save_password()
         self.assertEqual(len(Password.password_list),2)
 
     def test_delete_password(self):
         self.new_password.save_password()
+        test_password = Password("Test","user","test12345")
+        test_password.save_password()
+        self.new_password.delete_password()
+        self.assertEqual(len(Password.password_list),1)
 
 if __name__=='__main__':
     unittest.main()
