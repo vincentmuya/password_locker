@@ -17,7 +17,7 @@ def find_password(account_name):
 def checking_existing_passwords(user_name):
     return Password.password_exist(user_name)
 
-def display_passwords():
+def display_password():
     return Password.display_passwords()
 
 def main():
@@ -33,7 +33,7 @@ def main():
                 ca - create new account,
                 da - display account,
                 fa - find account,
-                ex - exist password locker.""")
+                ex - exit password locker.""")
         short_code = input().lower()
         print("_" * 20)
         if short_code == "ca":
@@ -57,6 +57,14 @@ def main():
             print("")
             print(f"""New account - {a_name} {u_name} """)
             print("")
+
+        elif short_code == "da":
+            if display_password():
+                print("Here is a list of all your accounts")
+                print("")
+                for password in display_passwords():
+                    print(f"{password.account_name} {password.user_name} {password.email} {password.account_password}")
+                    print("")
 
 
 
