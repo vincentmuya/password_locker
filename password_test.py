@@ -1,3 +1,4 @@
+import pyperclip
 import unittest # Importing the unittest module
 from password_locker import Password  # Importing the contact class
 
