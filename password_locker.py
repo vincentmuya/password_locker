@@ -9,5 +9,5 @@ class Password:
         self.user_name = user_name
         self.account_password = account_password
 
-        def save_password(self):
-            Password.password_list.append(self)
+    def save_password(self):
+        Password.password_list.append(self)
