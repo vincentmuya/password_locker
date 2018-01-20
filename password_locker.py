@@ -1,7 +1,7 @@
 import pyperclip
 
 import random
-global user_list
+# global user_list
 class User:
 
     user_list = []

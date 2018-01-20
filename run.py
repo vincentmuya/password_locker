@@ -3,11 +3,11 @@ import getpass
 from password_locker import User, Password
 
 def create_user(locker_userName, locker_password):
-    new_user = User(locker_userName, locker_password)
-    return new_user
+        new_user = User(locker_userName, locker_password)
+        return new_user
 
-def save_users(user):
-    user.save
+def save_user(user):
+        user.save_user()
 
 def create_password(aname,uname,email,password):
         new_password = Password(aname,uname,email,password)
@@ -44,6 +44,12 @@ def main():
             print("Choose a password")
             print("_" * 20)
             locker_password = input()
+            save_user(create_user(locker_userName, locker_password))
+            print("Keep your password to your self and out of reach")
+            print("")
+            print(f"""Your user details - {locker_userName}
+                    {locker_password}""")
+            print("")
 
     print("Whats your name?")
     user_name = input()
