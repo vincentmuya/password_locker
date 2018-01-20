@@ -26,7 +26,7 @@ def checking_existing_passwords(user_name):
     return Password.password_exist(user_name)
 
 def display_password():
-    return Password.display_passwords()
+    return Password.display_password()
 
 def main():
     print("Hello welcome to password locker")
@@ -98,7 +98,7 @@ def main():
                     if display_password():
                             print("Here is a list of all your accounts")
                             print("")
-                            for password in display_passwords():
+                            for password in display_password():
                                 print(
                                     f"{password.account_name} {password.user_name} {password.email} {password.account_password}")
                                 print("")

@@ -53,7 +53,7 @@ class Password:
         return False
 
     @classmethod
-    def display_passwords(cls):
+    def display_password(cls):
         return cls.password_list
 
     @classmethod
