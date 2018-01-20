@@ -64,7 +64,6 @@ def main():
         print(f"Hi {locker_userName}! What would you like to do?")
         print("")
 
-
         while True:
             print("""Use these short codes:
                         ca - create new account,
