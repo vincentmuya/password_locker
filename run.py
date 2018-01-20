@@ -61,10 +61,6 @@ def main():
             print("_" * 20)
             locker_password = input()
 
-    # print("Whats your name?")
-    # user_name = input()
-    # print("")
-
         print(f"Hi {locker_userName}! What would you like to do?")
         print("")
 
