@@ -1,5 +1,13 @@
 #!/user/bin/env python3.6
+import getpass
 from password_locker import Password
+
+def create_user(locker_userName, locker_password):
+    new_user = User(locker_userName, locker_password)
+    return new_user
+
+def save_users(user):
+    user.save_user
 
 def create_password(aname,uname,email,password):
         new_password = Password(aname,uname,email,password)

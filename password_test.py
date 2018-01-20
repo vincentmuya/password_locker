@@ -1,6 +1,22 @@
 import pyperclip
 import unittest # Importing the unittest module
-from password_locker import Password  # Importing the contact class
+from password_locker import Password,User  # Importing the contact class
+
+class TestUser(unittest.TestCase):
+    def setUp(self):
+        self.new_user = User("Vincentmuya", "vincent12345")
+
+    def test_init(self):
+        self.assertEqual(self.new_user.locker_userName, "Vincentmuya")
+        self.assertEqual(self.new_user.locker_password, "vincent12345")
+
+    def test_save_user(self):
+
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)
+
+    def tearDown(self):
+        User.user_list = []
 
 class TestPassword(unittest.TestCase):
 

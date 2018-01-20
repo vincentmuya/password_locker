@@ -1,4 +1,27 @@
 import pyperclip
+
+import random
+global user_list
+class User:
+
+    user_list = []
+
+    def __init__(self, locker_userName, locker_password):
+
+        self.locker_userName = locker_userName
+        self.locker_password = locker_password
+
+    def save_user(self):
+
+        User.user_list.append(self)
+
+    # @classmethod
+    # def find_by_account_name(cls, account_name)
+    #     for user in cls.user_list:
+    #         if user.locker_userName == account_name:
+    #             return user
+
+
 class Password:
 
     password_list =[]
