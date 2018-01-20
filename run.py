@@ -38,6 +38,7 @@ def main():
         short_code = input().lower()
         print("_" * 20)
         if short_code == "si":
+            print("Sign in")
             print("Enter your desired user name")
             print("_" * 20)
             locker_userName = input()
@@ -50,6 +51,17 @@ def main():
             print(f"""Your user details - {locker_userName}
                     {locker_password}""")
             print("")
+
+        elif short_code == "lg":
+            print("Log in")
+            print("Enter User Name")
+            print("_" * 20)
+            locker_userName = input()
+            print("Enter password")
+            print("_" * 20)
+            locker_password = input()
+
+
 
     print("Whats your name?")
     user_name = input()
