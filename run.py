@@ -22,8 +22,8 @@ def delete_password(password):
 def find_password(account_name):
     return Password.find_by_account_name(account_name)
 
-def checking_existing_password(user_name):
-    return Password.password_exist(user_name)
+def checking_existing_password(account_name):
+    return Password.password_exist(account_name)
 
 def display_password():
     return Password.display_password()
@@ -108,16 +108,17 @@ def main():
                             print("")
 
             elif short_code == "fa":
-                        print("Enter Account you want to search for")
+                        print("Enter Account you want to view details for")
 
                         search_account_name = input()
                         if checking_existing_password(search_account_name):
                             search_password = find_password(search_account_name)
                             print("_" * 20)
-                            print(f"{search_password.account_name} {search_password.user_name}")
+                            print(f"Account Name - {search_password.account_name} ")
+                            print(f"User Name - {search_password.user_name}")
+                            print(f"Email - {search_password.email}")
+                            print(f"Account Password - {search_password.account_password}")
                             print("_" * 20)
-                            print(f"Email Address - {search_password.email} ")
-                            print("Account Password -{search_password.account_password}")
                             print("")
 
                         else:

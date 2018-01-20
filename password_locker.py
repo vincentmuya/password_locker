@@ -40,15 +40,15 @@ class Password:
         Password.password_list.remove(self)
 
     @classmethod
-    def find_by_account_name(cls,user_name):
+    def find_by_account_name(cls,account_name):
             for password in cls.password_list:
-                if password.user_name == user_name:
+                if password.account_name == account_name:
                     return password
 
     @classmethod
-    def password_exist(cls,user_name):
+    def password_exist(cls,account_name):
         for password in cls.password_list:
-            if password.user_name == user_name:
+            if password.account_name == account_name:
                 return True
         return False
 
