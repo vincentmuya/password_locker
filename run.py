@@ -75,7 +75,7 @@ def main():
             print("Enter Account you want to search for")
 
             search_account_name = input()
-            if checking_existing_password(search_account_name):
+            if checking_existing_passwords(search_account_name):
                 search_password = find_password(search_account_name)
                 print("_" * 20)
                 print(f"{search_password.account_name} {search_password.user_name}")
