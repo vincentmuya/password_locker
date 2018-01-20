@@ -22,7 +22,7 @@ def delete_password(password):
 def find_password(account_name):
     return Password.find_by_account_name(account_name)
 
-def checking_existing_passwords(user_name):
+def checking_existing_password(user_name):
     return Password.password_exist(user_name)
 
 def display_password():
@@ -111,7 +111,7 @@ def main():
                         print("Enter Account you want to search for")
 
                         search_account_name = input()
-                        if checking_existing_passwords(search_account_name):
+                        if checking_existing_password(search_account_name):
                             search_password = find_password(search_account_name)
                             print("_" * 20)
                             print(f"{search_password.account_name} {search_password.user_name}")
