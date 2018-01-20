@@ -12,7 +12,6 @@ class User:
         self.locker_password = locker_password
 
     def save_user(self):
-
         User.user_list.append(self)
 
     # @classmethod

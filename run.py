@@ -1,13 +1,13 @@
 #!/user/bin/env python3.6
 import getpass
-from password_locker import Password
+from password_locker import User, Password
 
 def create_user(locker_userName, locker_password):
     new_user = User(locker_userName, locker_password)
     return new_user
 
 def save_users(user):
-    user.save_user
+    user.save
 
 def create_password(aname,uname,email,password):
         new_password = Password(aname,uname,email,password)
@@ -29,7 +29,23 @@ def display_password():
     return Password.display_passwords()
 
 def main():
-    print("Hello Welcome to password locker. Whats your name?")
+    print("Hello welcome to password locker")
+    while True:
+        print(
+            """Use these shortcode:
+                si - sign in
+                lg - log in""")
+        short_code = input().lower()
+        print("_" * 20)
+        if short_code == "si":
+            print("Enter your desired user name")
+            print("_" * 20)
+            locker_userName = input()
+            print("Choose a password")
+            print("_" * 20)
+            locker_password = input()
+
+    print("Whats your name?")
     user_name = input()
     print("")
 
@@ -95,7 +111,7 @@ def main():
             else:
                 print("That account does not exist")
         elif short_code == "ex":
-            print("Bye!! Thank you for using Password locker")
+            print("Bye!! Thank you for using Password locker ")
             break
         else:
             print("I really didnt get that. Please use short code below")
