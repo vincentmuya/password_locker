@@ -46,11 +46,78 @@ def main():
             print("_" * 20)
             locker_password = input()
             save_user(create_user(locker_userName, locker_password))
-            print("Keep your password to your self and out of reach")
-            print("")
             print(f"""Your user details - {locker_userName}
                     {locker_password}""")
             print("")
+            print(f"Hi {locker_userName} What would you like to do?")
+            print("")
+
+            while  True:
+                print("""Use these short codes:
+                            ca - create new account,
+                            da - display account,
+                            fa - find account,
+                            ex - exit password locker.""")
+                short_code = input().lower()
+                print("_" * 20)
+                if short_code == "ca":
+                            print("New Account")
+                            print("_" * 20)
+
+                            print("Enter Account Name -")
+                            a_name = input()
+
+                            print("Enter User Name -")
+                            u_name = input()
+
+                            print("Enter Email -")
+                            e_address = input()
+
+                            print("Enter Password -")
+                            a_password = input()
+
+                            save_password(create_password(a_name, u_name, e_address, a_password))
+
+                            print("")
+                            print(f"""New account - {a_name} {u_name} """)
+                            print("")
+
+                elif short_code == "da":
+                        if display_password():
+                                print("Here is a list of all your accounts")
+                                print("")
+                                for password in display_password():
+                                    print(
+                                        f"{password.account_name} {password.user_name} {password.email} {password.account_password}")
+                                    print("")
+                        else:
+                                print("")
+                                print("You dont seem to have any accounts saved yet")
+                                print("")
+
+                elif short_code == "fa":
+                            print("Enter Account you want to view details for")
+
+                            search_account_name = input()
+                            if checking_existing_password(search_account_name):
+                                search_password = find_password(search_account_name)
+                                print("_" * 20)
+                                print(f"Account Name - {search_password.account_name} ")
+                                print(f"User Name - {search_password.user_name}")
+                                print(f"Email - {search_password.email}")
+                                print(f"Account Password - {search_password.account_password}")
+                                print("_" * 20)
+                                print("")
+
+                            else:
+                                print("That account does not exist")
+                elif short_code == "ex":
+                            print("Bye!! Thank you for using Password locker ")
+                            break
+                else:
+                        print("I really didnt get that. Please use short code below")
+                        print("")
+
 
         elif short_code == "lg":
             print("Log in")
@@ -61,74 +128,79 @@ def main():
             print("_" * 20)
             locker_password = input()
 
-        print(f"Hi {locker_userName} What would you like to do?")
-        print("")
+            print(f"Hi {locker_userName} What would you like to do?")
+            print("")
 
-        while True:
-            print("""Use these short codes:
-                        ca - create new account,
-                        da - display account,
-                        fa - find account,
-                        ex - exit password locker.""")
-            short_code = input().lower()
-            print("_" * 20)
-            if short_code == "ca":
-                        print("New Account")
-                        print("_" * 20)
+            while True:
+                print("""Use these short codes:
+                            ca - create new account,
+                            da - display account,
+                            fa - find account,
+                            ex - exit password locker.""")
+                short_code = input().lower()
+                print("_" * 20)
+                if short_code == "ca":
+                            print("New Account")
+                            print("_" * 20)
 
-                        print("Enter Account Name -")
-                        a_name = input()
+                            print("Enter Account Name -")
+                            a_name = input()
 
-                        print("Enter User Name -")
-                        u_name = input()
+                            print("Enter User Name -")
+                            u_name = input()
 
-                        print("Enter Email -")
-                        e_address = input()
+                            print("Enter Email -")
+                            e_address = input()
 
-                        print("Enter Password -")
-                        a_password = input()
+                            print("Enter Password -")
+                            a_password = input()
 
-                        save_password(create_password(a_name, u_name, e_address, a_password))
+                            save_password(create_password(a_name, u_name, e_address, a_password))
 
-                        print("")
-                        print(f"""New account - {a_name} {u_name} """)
-                        print("")
-
-            elif short_code == "da":
-                    if display_password():
-                            print("Here is a list of all your accounts")
                             print("")
-                            for password in display_password():
-                                print(
-                                    f"{password.account_name} {password.user_name} {password.email} {password.account_password}")
+                            print(f"""New account - {a_name} {u_name} """)
+                            print("")
+
+                elif short_code == "da":
+                        if display_password():
+                                print("Here is a list of all your accounts")
                                 print("")
-                    else:
-                            print("")
-                            print("You dont seem to have any accounts saved yet")
-                            print("")
-
-            elif short_code == "fa":
-                        print("Enter Account you want to view details for")
-
-                        search_account_name = input()
-                        if checking_existing_password(search_account_name):
-                            search_password = find_password(search_account_name)
-                            print("_" * 20)
-                            print(f"Account Name - {search_password.account_name} ")
-                            print(f"User Name - {search_password.user_name}")
-                            print(f"Email - {search_password.email}")
-                            print(f"Account Password - {search_password.account_password}")
-                            print("_" * 20)
-                            print("")
-
+                                for password in display_password():
+                                    print(
+                                        f"{password.account_name} {password.user_name} {password.email} {password.account_password}")
+                                    print("")
                         else:
-                            print("That account does not exist")
-            elif short_code == "ex":
-                        print("Bye!! Thank you for using Password locker ")
-                        break
-            else:
-                    print("I really didnt get that. Please use short code below")
-                    print("")
+                                print("")
+                                print("You dont seem to have any accounts saved yet")
+                                print("")
+
+                elif short_code == "fa":
+                            print("Enter Account you want to view details for")
+
+                            search_account_name = input()
+                            if checking_existing_password(search_account_name):
+                                search_password = find_password(search_account_name)
+                                print("_" * 20)
+                                print(f"Account Name - {search_password.account_name} ")
+                                print(f"User Name - {search_password.user_name}")
+                                print(f"Email - {search_password.email}")
+                                print(f"Account Password - {search_password.account_password}")
+                                print("_" * 20)
+                                print("")
+
+                            else:
+                                print("That account does not exist")
+                elif short_code == "ex":
+                            print("Bye!! Thank you for using Password locker ")
+                            break
+                else:
+                        print("I really didnt get that. Please use short code below")
+                        print("")
+
+        else:
+                print("I really didnt get that. Please use short code below")
+                print("")
+
 
 
 if __name__=='__main__':
